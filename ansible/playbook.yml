@@ -1,0 +1,49 @@
+---
+- name: Common - user deploy
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure group deploy exists
+      ansible.builtin.group:
+        name: deploy
+        state: present
+
+    - name: Ensure user deploy exists
+      ansible.builtin.user:
+        name: deploy
+        group: deploy
+        shell: /bin/bash
+        create_home: true
+        state: present
+
+- name: Web - install and start nginx
+  hosts: web
+  become: true
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+    - name: Ensure nginx is started and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+- name: DB - install and start mariadb
+  hosts: db
+  become: true
+  tasks:
+    - name: Install mariadb-server
+      ansible.builtin.apt:
+        name: mariadb-server
+        state: present
+        update_cache: true
+
+    - name: Ensure mariadb is started and enabled
+      ansible.builtin.service:
+        name: mariadb
+        state: started
+        enabled: true

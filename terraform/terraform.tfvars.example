@@ -1,0 +1,11 @@
+vsphere_server   = "192.168.10.110"
+vsphere_user     = "administrator@vsphere.local"
+vsphere_password = "CHANGE_ME"
+
+datacenter = "LON"
+host       = "192.168.10.100"
+
+datastore = "DATA2"
+network   = "LAN-EPSI"
+
+template_vm_name = "tpl-ubuntu"
