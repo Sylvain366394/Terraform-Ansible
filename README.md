@@ -1,6 +1,6 @@
-TP Terraform & Ansible – Niveau 1
+# TP Terraform & Ansible – Niveau 1
 
-Objectif
+## Objectif
 
 L’objectif de ce projet est d’automatiser le déploiement et la configuration d’une infrastructure simple composée de deux machines virtuelles Linux.
 La première machine assure le rôle de serveur web, tandis que la seconde assure le rôle de serveur de base de données.
@@ -9,23 +9,23 @@ Le déploiement de l’infrastructure est réalisé avec Terraform et la configu
 
 ⸻
 
-Outils utilisés
+## Outils utilisés
 
-Terraform
+### Terraform
 
 Terraform est utilisé pour le provisionnement de l’infrastructure, notamment la création des machines virtuelles sur une plateforme de virtualisation VMware vSphere à partir d’un template Ubuntu Server.
 
-Ansible
+### Ansible
 
 Ansible est utilisé pour la configuration des machines virtuelles, la création des utilisateurs et l’installation des services nécessaires.
 
-Git / GitHub
+### Git / GitHub
 
 Git et GitHub sont utilisés pour le versionnement du code et le suivi des modifications du projet.
 
 ⸻
 
-Architecture
+## Architecture
 
 L’infrastructure déployée est composée de deux machines virtuelles :
 	•	Une machine virtuelle web, sur laquelle est installé et configuré le service Nginx
@@ -35,7 +35,7 @@ Les deux machines sont déployées sur le même réseau et utilisent un template
 
 ⸻
 
-Workflow
+## Workflow
 
 Dans un premier temps, Terraform est utilisé pour créer automatiquement les deux machines virtuelles et préparer l’infrastructure.
 Une fois les machines disponibles, Ansible est utilisé pour se connecter aux hôtes, créer l’utilisateur de déploiement et installer les services nécessaires.
